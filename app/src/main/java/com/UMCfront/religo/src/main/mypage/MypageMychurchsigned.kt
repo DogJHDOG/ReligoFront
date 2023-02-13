@@ -29,12 +29,17 @@ class MypageMychurchsigned: Fragment() {
 
         Log.d("p101test","1")
         var MypageMychurchAdapter= mutableListOf<String>()
+        var MypageMychurchAdapter2= mutableListOf<String>()
+
         MypageMychurchAdapter.add("church1")
         MypageMychurchAdapter.add("church2")
 
+        MypageMychurchAdapter2.add("서울시 동작구 흑석동 중앙본로 13-1")
+        MypageMychurchAdapter2.add("서울시 동작구 상도동 상도로 13-2")
+
 
         val mychurchsignup= view.findViewById<RecyclerView>(R.id.mypage_churchtry_recyclerview)
-        val mychurchsignupAdapter= MypageMychurchAdapter(MypageMychurchAdapter)
+        val mychurchsignupAdapter= MypageMychurchAdapter(MypageMychurchAdapter,MypageMychurchAdapter2)
         mychurchsignup.adapter=mychurchsignupAdapter
         mychurchsignup.layoutManager= LinearLayoutManager(this.context)
         Log.d("p101test","1011")

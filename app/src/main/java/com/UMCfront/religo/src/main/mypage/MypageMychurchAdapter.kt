@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.UMCfront.religo.R
 import com.UMCfront.religo.src.main.church.adapter.ChurchDetailGridAdapter
 
-class MypageMychurchAdapter(val items:MutableList<String>): RecyclerView.Adapter<MypageMychurchAdapter.ViewHolder>() {
+class MypageMychurchAdapter(val items:MutableList<String>,val items2:MutableList<String>): RecyclerView.Adapter<MypageMychurchAdapter.ViewHolder>() {
 
     interface GridItemClick{
         fun onClick(view: View, position:Int)
@@ -19,9 +19,12 @@ class MypageMychurchAdapter(val items:MutableList<String>): RecyclerView.Adapter
 
         //아이템 클릭
 
-        fun bindItem(item:String){
+        fun bindItem(item:String,item2 : String){
             val rv_text_title=itemView.findViewById<TextView>(R.id.mypage_mychurch_churchname_textview)
+            val rv_text_locate = itemView.findViewById<TextView>(R.id.mypage_mychurch_churchloc_textview)
             rv_text_title.text=item
+            rv_text_locate.text  = item2
+
 
         }
 
@@ -35,13 +38,13 @@ class MypageMychurchAdapter(val items:MutableList<String>): RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItem(items[position])
+        holder.bindItem(items[position],items2[position])
         if(itemClick!=null){
             holder.itemView.setOnClickListener{v->
                 itemClick?.onClick(v,position)
-
             }
         }
+
     }
 
     override fun getItemCount(): Int {

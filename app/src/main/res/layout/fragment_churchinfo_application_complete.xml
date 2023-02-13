@@ -18,17 +18,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.248" />
 
-    <TextView android:id="@+id/apllication_complete_textView"
-    android:layout_marginTop="20dp"
-    android:textSize="25sp"
-    android:textStyle="bold"
-    android:fontFamily="@font/pretendard_regular"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="목동 교회 가입 신청 접수"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/apllication_complete_church_imageView" />
+    <TextView
+        android:id="@+id/apllication_complete_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/pretendard_regular"
+        android:text="신청 접수 완료"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apllication_complete_church_imageView" />
 
     <TextView
         android:id="@+id/application_complete_welcome_textView"

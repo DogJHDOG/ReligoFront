@@ -45,6 +45,7 @@ class MypageMychurchsignup: Fragment() {
         val churchService=retrofit.create(ChurchDetailRetrofitService::class.java)
 
         var MypageMychurchAdapter= mutableListOf<String>()
+        var MypageMychurchAdapter2= mutableListOf<String>()
 
 
         mychurchSignupService.getMypageChurchSignup().enqueue(
@@ -69,11 +70,13 @@ class MypageMychurchsignup: Fragment() {
                                 ) {
                                     val res = response.body() as ChurchDetailResponse
                                     var info = res.result.info.name
+                                    var info2 = res.result.info.address
                                     MypageMychurchAdapter.add(info)
+                                    MypageMychurchAdapter2.add(info2)
                                     val mychurchsignup =
                                         view.findViewById<RecyclerView>(R.id.mypage_churchtry_recyclerview)
                                     val mychurchsignupAdapter =
-                                        MypageMychurchAdapter(MypageMychurchAdapter)
+                                        MypageMychurchAdapter(MypageMychurchAdapter,MypageMychurchAdapter2)
                                     mychurchsignup.adapter = mychurchsignupAdapter
                                     mychurchsignup.layoutManager = LinearLayoutManager(getActivity())
                                 }

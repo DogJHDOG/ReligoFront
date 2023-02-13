@@ -115,6 +115,7 @@ class HomeChurchtryFragment :Fragment(){
         val putdata = view.findViewById<Button>(R.id.home_sendinfo_tochurch)
         putdata!!.setOnClickListener {
             savepref()
+            (activity as MainActivity?)?.changeFragment(ChurchinfoApplicationCompleteFragment())
         }
 
         val btnDatetext = view.findViewById<TextView>(R.id.home_date_textView)

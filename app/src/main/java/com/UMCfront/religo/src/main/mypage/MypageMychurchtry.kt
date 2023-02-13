@@ -37,6 +37,7 @@ class MypageMychurchtry : Fragment() {
         val mychurchtryService = retrofit.create(MypageChurchtryResposeRetrofitInterface::class.java)
         val churchService=retrofit.create(ChurchDetailRetrofitService::class.java)
         var MypageMychurchtryAdapter= mutableListOf<String>()
+        var MypageMychurchtryAdapter2= mutableListOf<String>()
 
 
         mychurchtryService.getMypageChurchtry().enqueue(
@@ -62,13 +63,17 @@ class MypageMychurchtry : Fragment() {
 
                                     val res = response.body() as ChurchDetailResponse
                                     var info = res.result.info.name
+                                    var info2 = res.result.info.address
+
                                     MypageMychurchtryAdapter.add(info)
+                                    MypageMychurchtryAdapter2.add(info2)
+
                                     Log.d("p1011test",MypageMychurchtryAdapter.toString()+i)
 
                                     if(i==data.result.count()-1){
                                         Log.d("p1011test",MypageMychurchtryAdapter.toString())
                                         val mychurchtry = view.findViewById<RecyclerView>(R.id.mypage_churchtry_recyclerview)
-                                        val mychurchtryAdapter = MypageMychurchAdapter(MypageMychurchtryAdapter)
+                                        val mychurchtryAdapter = MypageMychurchAdapter(MypageMychurchtryAdapter,MypageMychurchtryAdapter2)
                                         mychurchtry.adapter = mychurchtryAdapter
                                         mychurchtry.layoutManager = LinearLayoutManager(getActivity())
                                     }

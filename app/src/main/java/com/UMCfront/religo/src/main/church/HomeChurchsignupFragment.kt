@@ -148,6 +148,8 @@ class HomeChurchsignupFragment:Fragment() {
 
         signupputdata!!.setOnClickListener {
             signupsavepref()
+            (activity as MainActivity?)?.changeFragment(ChurchinfoApplicationCompleteFragment())
+
         }
 
 
